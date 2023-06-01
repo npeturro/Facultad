@@ -1,8 +1,7 @@
 Proceso U4BusquedaEJ1
 	//Realizar un programa que permita al usuario de un hospital, buscar a un paciente por el
-	//nÃºmero de DNI e informar al usuario los datos de la persona.
-	//Realizar una bÃºsqueda secuencia
-	//nuevos cambios
+	//número de DNI e informar al usuario los datos de la persona.
+	//Realizar una búsqueda secuencia
 	
 	Definir busqueda, dimen, dni_paciente, edad_paciente, option Como Entero
 	Definir nombre_paciente, apellido_paciente, telefono_paciente, busqueda_apellido, busqueda_nombre Como Caracter
@@ -14,7 +13,7 @@ Proceso U4BusquedaEJ1
 	
 	Repetir
 		Escribir ("-----------------------------------------")
-		Escribir ("Â¿Que acciÃ³n desea realizar?")
+		Escribir ("¿Que acción desea realizar?")
 		Escribir ("1 - Buscar paciente por DNI")
 		Escribir ("2 - Ordenar alfabeticamente por apellidos.")
 		Escribir ("3 - Ordenar por edad de mayor a menor")
