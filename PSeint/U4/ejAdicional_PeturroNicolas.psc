@@ -129,11 +129,11 @@ SubProceso ordenarNotas(nombre, notas, cant)
         Para j <- i+1 Hasta cant - 1 Con Paso 1 Hacer
             Si notas[j] > mayor Entonces
                 aux_num = mayor
-				aux_nombre = mayor_nombre
+				//aux_nombre = mayor_nombre
                 mayor = notas[j]
-				mayor_nombre = nombre[j]
+				//mayor_nombre = nombre[j]
                 notas[j] = aux_num
-				nombre[j] = aux_nombre
+				//nombre[j] = aux_nombre
             FinSi
         FinPara
         notas[i] = mayor

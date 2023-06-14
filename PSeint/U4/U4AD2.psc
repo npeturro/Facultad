@@ -10,7 +10,7 @@ Proceso U4AD2
 	Definir i, j, opciones, votos_escuela Como Entero
 	Definir votos, votos_acum, mayorVoto Como Real
 	Definir candidatos_votos Como Caracter
-	Dimension candidatos_votos[5,4]
+	Dimension candidatos_votos[5,2]
 	Dimension votos_escuela[4]
 	
 	Escribir ("Bienvenido")
@@ -43,7 +43,7 @@ Proceso U4AD2
 		Segun opciones Hacer
 			1:
 				mayorVoto = calcularMayor(candidatos_votos)
-				Escribir ("El candidato con mayor número de votos es: ") 
+				Escribir ("El candidato con mayor número de votos es: "), mayorVoto
 			2:
 				
 		FinSegun
@@ -54,29 +54,27 @@ Proceso U4AD2
 	
 FinProceso
 
-Funcion mayorVoto <- calcularMayor(a)
+Funcion mayorVoto <- calcularMayor(candidatos)
 	
 	Definir mayorVoto Como Real
 	
-	Definir i, j, mayor, aux_num Como Real
+	Definir i, j, mayor, aux Como Real
 	Definir aux_nombre, mayor_nombre Como Caracter
-	Para i <- 0 Hasta cant - 1 Con Paso 1 Hacer
-        mayor = notas[i]
-		mayor_nombre = nombre[i]
-        Para j <- i+1 Hasta cant - 1 Con Paso 1 Hacer
-            Si notas[j] > mayor Entonces
-                aux_num = mayor
-				aux_nombre = mayor_nombre
-                mayor = notas[j]
-				mayor_nombre = nombre[j]
-                notas[j] = aux_num
-				nombre[j] = aux_nombre
-            FinSi
-        FinPara
-        notas[i] = mayor
-		nombre[i] = mayor_nombre
+	Para i <- 0 Hasta 4 Con Paso 1 Hacer
+		mayor = ConvertirANumero(candidatos[i,1])
+		Para j = i + 1 Hasta 4 Con Paso 1 Hacer
+			Si candidatos[j,1] > mayor Entonces
+				aux = mayor 
+				mayor = candidatos[j,1]
+				candidatos[j,1] = aux			
+			FinSi
+			
+		FinPara
+		candidatos[i,1] = mayor
+		
     FinPara
 	
+	mayorVoto = candidatos[0,1]
 	
 FinFuncion
 
