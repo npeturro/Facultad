@@ -38,7 +38,7 @@ int buscarAlumno(Alumno alumnos[], int dni)
     if (i == MAX_ALUMNOS)
     {
         i = -1;
-        return -1;
+        return i;
     }
 }
 
@@ -49,13 +49,16 @@ void cargarAlumnos(Alumno alumnos[]){
 
     for (int i = 0; i < MAX_ALUMNOS; i++)
     {
+        printf("Ingrese un DNI:\n");
         do
         {
-            printf("Ingrese un nro. de documento:\n");
             scanf("%d", &dni);
             pos = buscarAlumno(alumnos,dni);
-            if (pos == -1) {
-                printf("Este DNI ya fue ingresado\n");
+            if (pos != -1) { //Esto es distinto de -1 porque devuelve -1 cuando el dni no esta cargado y otro valor si el DNI esta existente 
+                printf("Este DNI ya fue ingresado, ingrese un DNI distinto\n");
+            }
+            if (dni > 99999999 || dni < 1000000){
+                printf ("DNI Inv%clido, ingreselo nuevamente\n", 160);
             }
 
         } while (dni > 99999999 || dni < 1000000 || pos != -1);
@@ -74,7 +77,7 @@ void cargarAlumnos(Alumno alumnos[]){
 void modificarNota(Alumno alumnos[])
 {
     int dni,nota,pos;
-        printf("Ingrese dni del alumno:\n");
+        printf("Ingrese DNI del alumno:\n");
     do
     { 
         scanf("%d", &dni);
@@ -122,7 +125,7 @@ int main() {
         printf("3. Modificar la nota de un alumno\n");
         printf("4. Mostrar un listado de los 10 alumnos\n");
         printf("5. Salir\n");
-        printf("Ingrese una opcion: ");
+        printf("Ingrese una opci%cn: ", 162);
         scanf("%d", &opcion);
         switch (opcion) {
             case 1:
@@ -148,7 +151,7 @@ int main() {
                 printf("Saliendo..");
                 break;
             default:
-                printf("Opcion invalida\n");
+                printf("Opci%cn invalida\n", 162);
                 break;
         }
     } while (opcion != 5);
