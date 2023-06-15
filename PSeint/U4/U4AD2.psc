@@ -8,9 +8,9 @@ Proceso U4AD2
 	//Para obtener el candidato ganador armar una función que retorne los datos necesarios y en el proceso principal mostrar los resultados;  para mostrar la cantidad de votantes de cada escuela armar un subproceso.
 	
 	Definir i, j, opciones, votos_escuela Como Entero
-	Definir votos, votos_acum, mayorVoto Como Real
-	Definir candidatos_votos Como Caracter
-	Dimension candidatos_votos[5,2]
+	Definir votos, votos_acum Como Real
+	Definir candidatos_votos, mayorVoto Como Caracter
+	Dimension candidatos_votos[5,5]
 	Dimension votos_escuela[4]
 	
 	Escribir ("Bienvenido")
@@ -24,13 +24,11 @@ Proceso U4AD2
 	
 	Para i = 0 Hasta 4 Con Paso 1 Hacer
 		Escribir ("Ingrese el total de votos obtenidos del candidato "), candidatos_votos[i,0]
-		Para j = 0 Hasta 3 Con Paso 1 Hacer
-			Escribir (" En la escuela número "), j + 1
+		Para j = 1 Hasta 4 Con Paso 1 Hacer
+			Escribir (" En la escuela número "), j
 			Leer votos
-			votos_acum = votos_acum + votos
-			candidatos_votos[i,1] = ConvertirATexto(votos_acum)
+			candidatos_votos[i,j] = ConvertirATexto(votos)
 		FinPara
-		votos_acum = 0
 	FinPara
 	
 	Repetir
@@ -56,25 +54,36 @@ FinProceso
 
 Funcion mayorVoto <- calcularMayor(candidatos)
 	
-	Definir mayorVoto Como Real
+	Definir mayorVoto Como Caracter
+	Definir i, j, votos, mayor, aux, suma Como Entero
 	
-	Definir i, j, mayor, aux Como Real
-	Definir aux_nombre, mayor_nombre Como Caracter
-	Para i <- 0 Hasta 4 Con Paso 1 Hacer
-		mayor = ConvertirANumero(candidatos[i,1])
-		Para j = i + 1 Hasta 4 Con Paso 1 Hacer
-			Si candidatos[j,1] > mayor Entonces
-				aux = mayor 
-				mayor = candidatos[j,1]
-				candidatos[j,1] = aux			
-			FinSi
-			
+	Dimension votos[5]
+	
+	Para i = 0 Hasta 4 Con Paso 1 Hacer
+		suma = 0
+		Para j = 1 Hasta 4 Con Paso 1 Hacer
+			suma = suma + ConvertirANumero(candidatos[i,j])
 		FinPara
-		candidatos[i,1] = mayor
+		votos[i] = suma
 		
-    FinPara
+		
+	FinPara
 	
-	mayorVoto = candidatos[0,1]
+	Para i = 0 Hasta 4 Con Paso 1 Hacer
+		mayor = votos[i]
+		Para j = i + 1 Hasta 4 Con Paso 1 Hacer
+			Si votos[j] > mayor Entonces
+				aux = votos[i]
+				mayor = votos[j]
+				votos[j] = aux
+			FinSi
+		FinPara
+	FinPara
+	
+	
+	mayorVoto = ConvertirATexto(votos[0])
+	
+
 	
 FinFuncion
 
