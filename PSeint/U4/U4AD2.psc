@@ -7,11 +7,11 @@ Proceso U4AD2
 	//Generar un informe con los resultados detallados de cada candidato en cada escuela, mostrando la cantidad de votos obtenidos en cada una.
 	//Para obtener el candidato ganador armar una función que retorne los datos necesarios y en el proceso principal mostrar los resultados;  para mostrar la cantidad de votantes de cada escuela armar un subproceso.
 	
-	Definir i, j, opciones, votos_escuela Como Entero
+	Definir i, j, opciones Como Entero
 	Definir votos, votos_acum Como Real
 	Definir candidatos_votos, mayorVoto Como Caracter
-	Dimension candidatos_votos[5,5]
-	Dimension votos_escuela[4]
+	Dimension candidatos_votos[5,6]
+	
 	
 	Escribir ("Bienvenido")
 	Escribir ("Ingrese el nombre de los 5 candidatos")
@@ -44,6 +44,8 @@ Proceso U4AD2
 				Escribir ("El candidato con mayor número de votos es: "), mayorVoto
 			2:
 				
+				calcularVotantes(candidatos_votos)
+				
 		FinSegun
 		
 		
@@ -55,39 +57,48 @@ FinProceso
 Funcion mayorVoto <- calcularMayor(candidatos)
 	
 	Definir mayorVoto Como Caracter
-	Definir i, j, votos, mayor, aux, suma Como Entero
+	Definir i, j, mayor, aux, suma Como Entero
 	
-	Dimension votos[5]
-	
+	mayor = 0
 	Para i = 0 Hasta 4 Con Paso 1 Hacer
 		suma = 0
 		Para j = 1 Hasta 4 Con Paso 1 Hacer
 			suma = suma + ConvertirANumero(candidatos[i,j])
 		FinPara
-		votos[i] = suma
 		
-		
+		candidatos[i,5] = ConvertirATexto(suma)
+		Si suma > mayor Entonces
+			mayor = suma
+			aux = i
+		FinSi
+		Escribir suma
 	FinPara
 	
-	Para i = 0 Hasta 4 Con Paso 1 Hacer
-		mayor = votos[i]
-		Para j = i + 1 Hasta 4 Con Paso 1 Hacer
-			Si votos[j] > mayor Entonces
-				aux = votos[i]
-				mayor = votos[j]
-				votos[j] = aux
-			FinSi
-		FinPara
-	FinPara
-	
-	
-	mayorVoto = ConvertirATexto(votos[0])
-	
-
+	mayorVoto = ConvertirATexto(mayor)
 	
 FinFuncion
 
-
+SubProceso calcularVotantes(candidatos)
+	
+	Definir option, i, j, total Como Entero
+	
+	Escribir ("Ingrese el número de la escuela que desea saber la cantidad de votos")
+	Leer option
+	
+	Para i = 0 Hasta 4 Con Paso 1 Hacer
+		
+		total = total + ConvertirANumero(candidatos[i, option])
+		
+		
+	FinPara
+	
+	Escribir ("El total para la escuela número "), option, (" es "), total
+	
+	
+	
+	
+	
+FinSubProceso
 
 
 
