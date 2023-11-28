@@ -1,0 +1,112 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    color: rgb(71, 71, 71);
+    font-size: small;
+}
+
+.cabecera {
+    transition: background-color 1s;
+    background-color: rgb(60, 66, 95);
+    color: white;
+    display: flex;
+    
+    
+}
+
+.profile-picture {
+    /* Redondear la imagen y darle un tamaño maximo de 200px */
+    align-content: center;
+    border-radius:200px;
+    max-height: 200px;
+    padding: 15px;
+
+}
+
+.presentacion {
+    transition: background-color 0.5s;
+    background-color: white;
+    margin: 2%;
+    color: rgb(92, 92, 92);
+    padding: 2%;
+    border-radius: 2em;
+    height: 100%;
+    text-align: center;
+}
+
+.nav-bar {
+    display: flex;
+}
+
+.datos-personales {
+    transition: background-color 1s;
+    background-color: #d1d0d0;
+    padding: 1%;
+
+}
+
+.seccion p, li{
+    margin: 10px;
+}
+.title {
+    font-weight: bold;
+}
+
+.contenido {
+    padding: 2em;
+}
+.date {
+    color: gray;
+    font-size: small;
+}
+
+h3 {
+    background-color: rgb(183, 176, 189);
+    padding: 2px;
+}
+
+.my-button {
+    padding: 10px 20px;
+    background-color: rgb(60, 66, 95);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.datos-personales-home{
+    display: grid;
+    grid-template-columns: 500px auto;
+    gap: 5px; 
+    padding: 2%;
+    color: white;
+    padding: 0%;
+}
+.datos-perso-h3{
+    grid-column: span 2;
+    background-color: #008080 !important;
+    height: 40px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+.datos-perso-h3 h4{
+    color: white;
+    margin-left: 15px;
+}
+.datos-izq{
+    border-radius: 10px;
+    grid-column: 1;
+    grid-row: span 6;
+    background-color: #eceff0;
+    margin-top: 0px;
+    padding: 5px;
+}
+.datos-izq p{
+    margin-top: 15px;
+}
+.datos-der{
+    background-color: #eceff0;
+    border-radius: 10px;
+    padding: 20px;
+}
+

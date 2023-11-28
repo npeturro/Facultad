@@ -1,0 +1,51 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 15px;
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    color: black;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    margin-left: 0px;
+    border-radius: 5px;
+}
+#button-class{
+    background-color: #3c425f;
+    height: 40px;
+    width: 103%;
+    color: white;
+}
+button{
+    background-color: #8895d4;
+    height: 40px;
+    width: 103%;
+}
+button:hover{
+    background-color: #b2b8d4;
+    cursor: pointer;
+}
+#button-class:hover{
+    background-color: #272f5a;
+    cursor: pointer;
+}
+button:active{
+    background-color: #b2b8d4;
+    cursor: pointer;
+}
+#button-class:active{
+    background-color: #272f5a;
+    cursor: pointer;
+}

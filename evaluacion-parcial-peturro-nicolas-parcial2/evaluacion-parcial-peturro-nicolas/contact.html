@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <section class="main-form">
+        <div class="formulario">
+            <form action="">
+                <label for="name">Nombre:</label>
+                <br>
+                <input type="text" name="name" id="name" placeholder="Ingrese nombre.." class="name">
+                <br>
+                <label for="e-mail">E-mail:</label>
+                <br>
+                <input type="email" name="e-mail" id="e-mail" placeholder="Ingrese e-mail.." class="email">
+                <br>
+                <label for="subject">Subject:</label>
+                <br>
+                <input type="text" name="subject" id="subject" placeholder="Ingrese subject.." class="subject">
+                <br>
+                <label for="age">Fecha de Nacimiento:</label>
+                <input type="date" name="age" id="age" placeholder="Ingrese fecha de nacimiento" class="age">
+                <br>
+                <label for="experienca">Años de Experiencia:</label>
+                <input type="number" name="experiencia" id="experiencia" placeholder="Ingrese años de experiencia" class="experiencia">
+                <br>
+                <label for="conocimientos" id="conocimientos" class="conocimientos">Conocimientos en:</label><br>
+                <input type="checkbox" name="conocimientos" value="word" class="conocimientos">Word <br> 
+                <input type="checkbox" name="conocimientos" value="excel" class="conocimientos">Excel <br>
+                <input type="checkbox" name="conocimientos" value="jira" class="conocimientos">Jira <br>
+                <input type="checkbox" name="conocimientos" value="vscode" class="conocimientos">Visual Studio <br>
+                <input type="checkbox" name="conocimientos" value="oracle" class="conocimientos">Oracle <br>
+                <input type="checkbox" name="conocimientos" value="sql" class="conocimientos">SQL Server <br> 
+                <input type="checkbox" name="conocimientos" value="ubuntu" class="conocimientos">uBuntu <br>
+                <input type="checkbox" name="conocimientos" value="teams" class="conocimientos">Teams <br>
+                <input type="checkbox" name="conocimientos" value="seguridadInf" class="conocimientos">Seguridad Informatica <br>
+                <input type="checkbox" name="conocimientos" value="robotica" class="conocimientos">Robótica <br>
+                <label for="remuneracion">Remuneración bruta pretendida:</label>
+                <input type="number" name="dinero" id="dinero" placeholder="Ingrese Remuneración pretendida" class="remuneracion">
+                <br>
+                <label for="relacion" class="relacion_pretendida">Tipo de relación pretendida:</label><br>
+                <input type="radio" name="relacion" value="autonomo" class="conocimientos" onchange="cambiarColorRelacion()">Autonomo
+                <input type="radio" name="relacion" value="monotributista" class="conocimientos" onchange="cambiarColorRelacion()">Monotributista
+                <input type="radio" name="relacion" value="dependencia" class="conocimientos" onchange="cambiarColorRelacion()">Relación de dependencia
+                <div class="colorResultado"></div>
+                <br>                
+                <label for="msj">Mensaje:</label>
+                <br>
+                <textarea name="msj" id="msj" cols="30" rows="10"></textarea>
+                <div><p class="contador"></p></div>
+                <input type="button" value="Enviar" id="button-class" onclick="validarDatos(); mostrarDatos()">
+                <button class="return" onclick="window.location.href='index.html'">Volver</button>
+            </form>
+        </div>
+        <div id="datos_candidato"></div> 
+    </section>
+    
+</body>
+</html>
