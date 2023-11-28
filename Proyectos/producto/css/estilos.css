@@ -1,0 +1,38 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+header{
+    display: flex;
+    background-color: rgb(87, 103, 169);
+    width: auto;
+    padding: 2%;
+    height: 30px;
+    align-items: center;
+    justify-content: space-around;
+}
+.header-link{
+    display: flex;
+}
+.header-link a{
+    text-decoration: none;
+}
+.header-link li{
+    margin-left: 15px;
+    list-style-type: none;
+}
+.inicio{
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: beige;
+    height: auto;
+    padding: 15%;
+}
+#texto{
+    width: 500px
+}
+#texto p{
+    color: black;
+}
